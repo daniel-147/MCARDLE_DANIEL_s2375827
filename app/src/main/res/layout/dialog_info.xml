@@ -1,0 +1,118 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="299dp"
+        android:layout_height="18dp"
+        android:text="Affected Roads"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center" />
+    <LinearLayout
+        android:id="@+id/locationRow"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label"
+        android:layout_marginTop="8dp"
+        android:background="#5988">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fromLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/fromLocationView"
+                android:text="From"
+                android:textSize="15sp" />
+
+            <ListView
+                android:id="@+id/fromLocationView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:padding="5dp"
+                android:dividerHeight="3dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/toLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/toLocationView"
+                android:text="To"
+                android:textSize="15sp" />
+
+            <ListView
+                android:id="@+id/toLocationView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:padding="5dp"
+                android:dividerHeight="3dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/impactLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:labelFor="@+id/impactView"
+        android:text="Impact"
+        android:layout_below="@+id/locationRow"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/impactView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:layout_below="@+id/impactLabel"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:labelFor="@+id/timeView"
+        android:text="Start time"
+        android:layout_below="@+id/impactView"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/timeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:layout_below="@+id/timeLabel"
+        android:layout_centerHorizontal="true"
+        />
+        <Button
+            android:id="@+id/dialogButtonOK"
+            android:text=" Ok "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timeView"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            />
+    </RelativeLayout>

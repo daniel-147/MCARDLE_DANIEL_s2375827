@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MPD XML Starter code 2025-2026 -->
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/vwSwitch">
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@color/white">
+
+        <TextView android:id="@+id/salutation"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Traffic Updates" />
+
+        <TextView android:id="@+id/colorKey"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/salutation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:text="Background colour indicates delay length\nWhite = Unknown\nPale Yellow = Uncertain Duration\nYellow = Delays\nOrange = Long Delays\nRed = Very Long Delays"/>
+
+        <Button android:id="@+id/clearButton"
+            android:layout_below="@id/colorKey"
+            android:layout_toStartOf="@+id/sortButton"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:text="Clear Filters"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/buttons"/>
+
+        <Button android:id="@+id/sortButton"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:layout_below="@+id/colorKey"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/buttons"
+            android:textColor="@color/black"
+            android:text="Sort By Distance"/>
+
+        <Button android:id="@+id/mapButton"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:text="Map View"
+            android:layout_below="@+id/colorKey"
+            android:layout_toEndOf="@+id/sortButton"
+            android:backgroundTint="@color/buttons"
+            android:textColor="@color/black"
+            />
+
+        <TextView android:id="@+id/searchLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_above="@+id/acknowledgement"
+            android:text="Search by Road Name"/>
+
+        <EditText android:id="@+id/searchBar"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/searchLabel"
+            android:layout_below="@+id/mapButton"
+            android:inputType="text"
+            android:text=""/>
+        <ImageButton android:id="@+id/searchButton"
+            android:layout_below="@+id/mapButton"
+            android:layout_toEndOf="@+id/searchBar"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/search"
+            android:backgroundTint="@color/white"
+            android:contentDescription="Search button"/>
+
+
+        <TextView android:id="@+id/acknowledgement"
+            android:layout_below="@id/searchButton"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textSize="20sp"
+            android:text="Contains Traffic Scotland data"/>
+
+        <ViewSwitcher
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/acknowledgement"
+            android:id="@+id/vwSwitchBar">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/bar1"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ListView android:id="@+id/list"
+                    android:layout_below="@id/bar1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/buttons"
+                    android:dividerHeight="3dp">
+                </ListView>
+            </LinearLayout>
+        </ViewSwitcher>
+
+    </RelativeLayout>
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mapScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@color/white">
+        <Button android:id="@+id/listButton"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:backgroundTint="@color/buttons"
+            android:textColor="@color/black"
+            android:text="Back to List View"/>
+    <fragment
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_below="@+id/listButton"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context="myandroidstuff.me.org.mapflipperexample.MapsFlipperActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    </RelativeLayout>
+
+</ViewSwitcher>
